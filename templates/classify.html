@@ -1,0 +1,33 @@
+{% extends 'zoo_app/base.html' %}
+
+{% block content %}
+
+<div class="row">
+  <div class="col s10">
+    <h4>動物の画像をアップロード</h4>
+  </div>
+</div>
+
+<!-- 画像をUploadするセクション -->
+<div class="row">
+  <form method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+    <div class="col s6">
+      <div class="file-field input-field">
+        <div class="btn orange lighten-3">
+          <span>File</span>
+          <input type="file" name="predict_img">
+        </div>
+      <div class="file-path-wrapper">
+        <input class="file-path validate" type="text">
+      </div>
+      </div>
+    </div>
+    <div class="col s1" style="margin-top:20px;">
+      <button class="btn orange lighten-3" type="submit">Upload</button>
+    </div>
+    </form>
+</div>
+
+
+{% endblock %}
